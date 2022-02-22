@@ -4,6 +4,7 @@ export class CreateUser {
     @IsNumberString()
     readonly id: number;
 
+    
     @IsString()
     readonly name: string;
 }

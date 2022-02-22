@@ -1,5 +1,6 @@
 import { IsNumberString, IsString } from 'class-validator';
 
+
 export class updateUser {
     @IsNumberString()
     readonly index: number

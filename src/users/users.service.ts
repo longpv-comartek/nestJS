@@ -32,6 +32,7 @@ export class UserService {
         }
     }
 
+    
     async deleteUser(id) {
         try {
             this.user.splice(id, 1);
