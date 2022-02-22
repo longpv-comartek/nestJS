@@ -10,8 +10,7 @@ async function bootstrap() {
       transform: true,
       whitelist: true,
       forbidNonWhitelisted: true,
-      disableErrorMessages:
-        process.env.NODE_ENV === 'PRODUCTION' ? true : false,
+      disableErrorMessages: true
     }
   ));
   await app.listen(3000);

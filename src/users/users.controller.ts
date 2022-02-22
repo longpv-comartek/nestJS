@@ -4,8 +4,7 @@ import { CreateUser } from './dto/CreateUser';
 import { replaceUser } from './dto/ReplaceUser';
 import { deleteUser } from './dto/deleteUser'
 import { updateUser } from './dto/updateUser'
-import { PostRouteDto } from './dto/validation';
-
+import { checkId } from './dto/checkId'
 @Controller('user')
 export class UserController {
     constructor(private readonly UserService: UserService) { }
@@ -15,14 +14,16 @@ export class UserController {
         return this.UserService.getUser()
     }
 
+
     @Get('/search/:key')
     async searchUser(@Param('key') key: string) {
-        return this.UserService.searchUser(key)
+        return 1
     }
 
 
     @Post('/create')
     async createUser(@Body() CreateUser: CreateUser) {
+        console.log(CreateUser);
         return this.UserService.createUser(CreateUser)
     }
 
@@ -32,7 +33,7 @@ export class UserController {
     }
 
     @Delete('/delete/:id')
-    async delete(@Param('id') id: number) {
+    async delete(@Param() id: checkId) {
         return this.UserService.deleteUser(id);
     }
 
@@ -41,8 +42,4 @@ export class UserController {
         return this.UserService.updateUser(updateUser);
     }
 
-    @Get('/test')
-    test(): PostRouteDto {
-        return  
-    }
 }

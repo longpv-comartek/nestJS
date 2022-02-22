@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import User from './dto/user'
 import { CreateUser } from './dto/CreateUser';
 import { replaceUser } from './dto/replaceUser';
-import { deleteUser } from './dto/deleteUser'
 import { updateUser } from './dto/updateUser'
 
 @Injectable()
@@ -17,7 +16,8 @@ export class UserService {
         try {
             this.user.push(CreateUser);
             return this.user;
-        } catch {
+        }
+        catch {
             return false;
         }
     }
@@ -25,19 +25,19 @@ export class UserService {
     async replaceUser(replaceUser: replaceUser) {
         try {
             this.user = this.user.map(u => u.id !== +replaceUser.id ? u : replaceUser);;
-            console.log(replaceUser, this.user);
-
             return this.user;
-        } catch {
+        }
+        catch {
             return false;
         }
     }
 
-    async deleteUser(id: number) {
+    async deleteUser(id) {
         try {
             this.user.splice(id, 1);
             return this.user;
-        } catch {
+        }
+        catch {
             return false;
         }
     }

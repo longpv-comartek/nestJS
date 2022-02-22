@@ -1,3 +1,6 @@
+import { IsNumber } from 'class-validator';
+
 export class deleteUser {
-    readonly index: number;
+    @IsNumber()
+    readonly id: string;
 }
