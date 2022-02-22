@@ -6,5 +6,6 @@ export class updateUser {
     @IsNumberString()
     readonly id: number
     @IsString()
+
     readonly name: string
 }
