@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Body, Put, Delete, Patch, Param, Query, HttpStatus, Version } from '@nestjs/common';
 import { UserService } from './users.service';
-import { CreateUser } from './dto/CreateUser';
-import { replaceUser } from './dto/ReplaceUser';
-import { deleteUser } from './dto/deleteUser';
-import { updateUser } from './dto/updateUser';
-import { checkId } from './dto/checkId';
+import { CreateUser } from './dto/create-user.dto';
+import { replaceUser } from './dto/replace-user.dto';
+import { deleteUser } from './dto/delete-user.dto';
+import { updateUser } from './dto/update-user.dto';
+import { checkId } from './dto/checkId.dto';
 import { ParseIntPipe } from './dto/parse-int.pipe'
 
 @Controller('user')
