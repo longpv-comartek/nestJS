@@ -1,10 +1,15 @@
-import { IsNumberString, IsString } from 'class-validator';
+import { IsNumberString, IsString, IsMobilePhone } from 'class-validator';
+
 
 export class updateUser {
+
     @IsNumberString()
-    readonly index: number
+    index: number
+
+
     @IsNumberString()
     readonly id: number
     @IsString()
+
     readonly name: string
 }
