@@ -4,7 +4,7 @@ import { CreateUser } from './dto/create-user.dto';
 import { replaceUser } from './dto/replace-user.dto';
 import { deleteUser } from './dto/delete-user.dto';
 import { updateUser } from './dto/update-user.dto';
-import { checkId } from './dto/checkId.dto';
+import { checkId } from './dto/check-id.dto';
 import { ParseIntPipe } from './dto/parse-int.pipe'
 
 @Controller('user')
