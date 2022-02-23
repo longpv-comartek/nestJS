@@ -27,18 +27,20 @@ export class UserService {
             this.user = this.user.map(u => u.id !== +replaceUser.id ? u : replaceUser);;
             return this.user;
         }
-        catch {
+        catch
+        {
             return false;
         }
     }
 
-    
+
     async deleteUser(id) {
         try {
             this.user.splice(id, 1);
             return this.user;
         }
-        catch {
+        catch
+        {
             return false;
         }
     }
@@ -47,7 +49,9 @@ export class UserService {
         try {
             this.user[updateUser.index] = updateUser
             return this.user;
-        } catch {
+        }
+        catch
+        {
             return false;
         }
     }
@@ -56,7 +60,10 @@ export class UserService {
         try {
             const keysearch = this.user.filter(item => item.name.toLowerCase().trim().includes(str.toLowerCase().trim()))
             return keysearch
-        } catch {
+
+        }
+        catch
+        {
             return false;
         }
     }
